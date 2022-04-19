@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
 import StartGame from "./components/StartGame";
-import MainGame from "./components/MainGame";
+import Wordle from "./components/Wordle";
+import TicTacToe from "./components/TicTacToe";
 import GameOver from "./components/GameOver";
 import NotFound from "./components/NotFound";
 import "./App.css";
@@ -15,7 +16,8 @@ return (
 <Route path = "/" element = { <Landing/> }/>
 <Route path="/login" element = { < Login /> }/>
 <Route path = "/start" element = { < StartGame /> }/>
-<Route path = "/main" element = { < MainGame /> }/>
+<Route path = "/wordle" element = { < Wordle /> }/>
+<Route path = "/tic-tac-toe" element = { < TicTacToe /> }/>
 <Route path = "/game-over" element = { < GameOver /> }/>
 <Route path = "*" element = { < NotFound /> }/>
 </Routes>

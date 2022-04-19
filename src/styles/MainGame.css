@@ -1,0 +1,36 @@
+.mainGame__Title {
+  font-size:2em;
+  position:fixed;
+  margin-left:-10px;
+  top:5%;
+  left:5%;
+  color:rgb(112, 181, 131);
+}
+.mainGame__goBackButton {
+    position:fixed;
+    top:5%;
+    right:5%;
+
+    width:130px;
+
+
+    box-shadow: 8px 10px 7px -4px #bbb;
+
+    padding:15px 5px 15px 5px;
+
+    text-align:center;
+
+    font-size:0.95em;
+
+    color:#fff;
+    background-color: rgb(112, 181, 131);
+    border:none;
+    border-radius:40px;
+    text-decoration:none;
+    cursor:pointer;
+    transition: .5s ease;
+}
+
+  .mainGame__goBackButton:hover {
+    opacity:0.6;
+  }

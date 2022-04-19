@@ -3,4 +3,142 @@
   height:90px;
   border-radius:50%;
   float:left;
+  margin-right:20px;
+}
+
+.landing__topLeft {
+  position:fixed;
+  top:5%;
+  left:3%;
+}
+
+.landing__topLeftText {
+  float:left;
+  margin-top:20px;
+}
+.landing__name {
+  font-weight:bold;
+  font-size:1.25em;
+}
+
+.landing__ethers {
+  margin-top:3px;
+}
+
+.landing__donationHistoryButton {
+  margin-left:30px;
+  width:150px;
+  margin-top:20px;
+
+  font-size:0.85em;
+
+
+  box-shadow: 8px 10px 7px -4px #bbb;
+
+  padding:15px 5px 15px 5px;
+  position:relative;
+  color:#fff;
+  background-color: rgb(112, 181, 131);
+  border:none;
+  border-radius:40px;
+  text-decoration:none;
+  cursor:pointer;
+  transition: .5s ease;
+}
+
+.landing__donationHistoryButton:hover {
+  opacity:0.6;
+}
+
+.landing__games {
+  position:absolute;
+  top:22%;
+  left:50%;
+  margin-left:-100px;
+
+}
+
+.landing__gameBox {
+  cursor:pointer;
+  text-decoration:none !important;
+}
+
+.landing__gameBoxHeader {
+  width:40%;
+  background-color: rgb(112, 181, 131);
+  color:white;
+  font-size:1.1em;
+  font-weight:600;
+  border-radius:30px 30px 0px 0px;
+  padding:15px;
+}
+/*
+.landing__gameBox:hover {
+  opacity:0.6;
+  transition:1s;
+} */
+
+.landing__gameBoxImage {
+  width:90%;
+  padding:15px;
+  display:block;
+}
+
+.landing__gameBoxHeaderText {
+  margin-left:8px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgb(112, 181, 131);
+  border-radius:0px 0px 20px 20px;
+}
+
+.container {
+  position: relative;
+  width:40%;
+  padding:15px;
+  display:block;
+}
+
+.landing__gameBox:hover .overlay {
+  opacity: 1;
+}
+
+.landing__gameBox:hover .landing__gameBoxHeader {
+  background-color:#fff;
+  color:rgb(112, 181, 131);
+  border:3px solid rgb(112, 181, 131);
+  padding:12px;
+}
+
+.landing__gameBoxSpacing {
+  height:30px;
+}
+
+.landing__playGameText {
+  /* display:none; */
+  /* display:absolute; */
+  /* top:-40%;
+  width:40%; */
+  /* margin-top:-150px; */
+
+  color: white;
+  font-weight:bold;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
