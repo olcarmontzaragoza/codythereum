@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
 import '../styles/MainGame.css';
 
 
@@ -18,5 +19,5 @@ class Wordle extends Component {
     </div>;
   }
 }
-
+  
 export default Wordle;
