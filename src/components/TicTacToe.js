@@ -1,8 +1,12 @@
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import '../styles/TicTacToe.css';
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import "../styles/TicTacToe.css";
 
 // class TicTacToe extends Component {
 //   constructor(props) {
@@ -20,8 +24,6 @@ import '../styles/TicTacToe.css';
 //   }
 // }
 
-
-
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -29,31 +31,23 @@ function Square(props) {
     </button>
   );
 }
+
 class TicTacToe extends Component {
   constructor(props) {
-      // super(props);
-      super(props);
-      this.state = {
-        squares: Array(9).fill(null),
-        xIsNext: true,
-      };
-
+    // super(props);
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+      xIsNext: true,
+    };
   }
-  // render() {
-  //   return <div className="mainGame__background">
 
-  //   <div className="mainGame__Title">Wordle</div>
-
-  //   <Link to="/" className="mainGame__goBackButton">Go Back</Link>
-
-  //   </div>;
-  // }
   handleClick(i) {
     const squares = this.state.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({
       squares: squares,
       xIsNext: !this.state.xIsNext,
@@ -73,9 +67,13 @@ class TicTacToe extends Component {
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = "Winner: " + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
+
+    function check() {
+      window.location.assign("/game-over");
     }
 
     return (
@@ -96,30 +94,22 @@ class TicTacToe extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        <div>{winner && check()}</div>
       </div>
     );
   }
 }
-class Game extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <TicTacToe />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
+function Game() {
+  return (
+    <div className="game">
+      <div className="game-board">
+        <TicTacToe />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Game />, document.getElementById("root"));
 
 function calculateWinner(squares) {
   const lines = [

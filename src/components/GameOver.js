@@ -1,19 +1,9 @@
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "../styles/GameOver.css";
 
-import React, { Component } from 'react';
-import '../styles/GameOver.css';
-
-
-class GameOver extends Component {
-  constructor(props) {
-      super(props);
-
-  }
-  render() {
-    return <div className="gameOver__background">
-      Game Over :(
-
-    </div>;
-  }
+function GameOver() {
+  return <div className="gameOver__background">Yayyy, you get to donate</div>;
 }
 
 export default GameOver;
