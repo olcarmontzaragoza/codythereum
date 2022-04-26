@@ -11,16 +11,9 @@ import "../styles/TicTacToe.css";
 // class TicTacToe extends Component {
 //   constructor(props) {
 //       super(props);
-
+//
 //   }
-//   render() {
-//     return <div className="mainGame__background">
-
-//     <div className="mainGame__Title">Tic Tac Toe</div>
-
-//     <Link to="/" className="mainGame__goBackButton">Go Back</Link>
-
-//     </div>;
+//
 //   }
 // }
 
@@ -41,6 +34,18 @@ class TicTacToe extends Component {
       xIsNext: true,
     };
   }
+  //   render() {
+  //     return <div className="mainGame__background">
+  //
+  //     <div className="mainGame__Title">Tic Tac Toe</div>
+  //
+  //     <Link to="/" className="mainGame__goBackButton">Go Back</Link>
+  //
+  //     <Game />
+  //
+  //     </div>;
+  //
+  // }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
@@ -73,8 +78,12 @@ class TicTacToe extends Component {
     }
 
     function check() {
-      window.location.assign("/game-over");
+      var currentUrl = window.location.href;
+      var stake = currentUrl.substring(34,window.location.href.length);
+
+      window.location.assign("/game-over/" + stake);
     }
+
 
     return (
       <div>
@@ -96,7 +105,7 @@ class TicTacToe extends Component {
         </div>
         <div>{winner && check()}</div>
       </div>
-      
+
     );
   }
 }
@@ -111,7 +120,7 @@ function Game() {
   );
 }
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<TicTacToe />, document.getElementById("root"));
 
 function calculateWinner(squares) {
   const lines = [

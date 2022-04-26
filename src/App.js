@@ -17,8 +17,8 @@ return (
 <Route path="/login" element = { < Login /> }/>
 <Route path = "/start" element = { < StartGame /> }/>
 <Route path = "/wordle" element = { < Wordle /> }/>
-<Route path = "/tic-tac-toe" element = { < TicTacToe /> }/>
-<Route path = "/game-over" element = { < GameOver /> }/>
+<Route path = "/tic-tac-toe/:id" element = { < TicTacToe /> }/>
+<Route path = "/game-over/:id" element = { < GameOver /> }/>
 <Route path = "*" element = { < NotFound /> }/>
 </Routes>
 </BrowserRouter>);

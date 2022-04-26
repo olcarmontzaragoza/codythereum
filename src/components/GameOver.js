@@ -31,18 +31,24 @@ function GameOver() {
     e.preventDefault();
     const data = new FormData(e.target);
     await startPayment({
-      ether: stake,
+      ether: window.location.href.substring(32,window.location.href.length),
       addr: data.get("addr"),
     });
   };
 
   return (
     <div className="gameOver_background">
+
+      {/*  <div className="mainGame__Title">Tic Tac Toe</div> */}
+
+        <Link to="/" className="mainGame__goBackButton">Go Back</Link>
+
+
       <form className="m-4" onSubmit={handleDonate}>
         <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
           <main className="mt-4 p-4">
             <h1 className="text-xl font-semibold text-gray-700 text-center">
-              You staked {stake} ETH
+              You staked {window.location.href.substring(32,window.location.href.length)} ETH
             </h1>
             <div className="">
               <div className="my-3">
