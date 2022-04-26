@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import '../styles/StartGame.css';
+import { useState } from "react";
+import { ethers } from "ethers";
 
 
 class StartGame extends Component {

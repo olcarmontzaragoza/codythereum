@@ -96,9 +96,11 @@ class TicTacToe extends Component {
         </div>
         <div>{winner && check()}</div>
       </div>
+      
     );
   }
 }
+
 function Game() {
   return (
     <div className="game">
