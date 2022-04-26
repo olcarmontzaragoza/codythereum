@@ -24,7 +24,7 @@ function Landing() {
       <div className="landing__topLeft">
         <img
           className="landing__profilePhoto"
-          src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/272401328_7119681694709443_145450356369664909_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=4KNYypwRJxkAX-0DBvq&_nc_ht=scontent-sjc3-1.xx&oh=00_AT_YXHmgeh4jhF5mU8qRFIgRFd4UAhQHmaE5ZxEhgZCUng&oe=626293FF"
+          src="./DSC_6056.JPG"
         />
 
         <div className="landing__topLeftText">
@@ -45,27 +45,31 @@ function Landing() {
         <form className="m-4" onSubmit={stakeAmount}>
           <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
             <main className="mt-4 p-4">
-              <h1 className="text-xl font-semibold text-gray-700 text-center">
+              <h1 className="text-xl font-semibold text-gray-700 text-cente" style={{"width":"50%", "textAlign":"center"}}>
                 Stake an amount before playing the game
               </h1>
-              <div className="">
+              <div className="" style={{"width":"50%"}}>
                 <div className="my-3">
-                  <input
+                  <div style={{"display": "flex", "justifyContent": "center"}}> 
+                  <input 
                     name="stake"
                     type="text"
                     className="input input-bordered block w-full focus:ring focus:outline-none"
                     placeholder="Amount in ETH"
                   />
+                  </div>
                 </div>
               </div>
             </main>
-            <footer className="p-4">
+            <footer className="p-4" style={{"width":"50%"}}>
+              <div style={{"display": "flex", "justifyContent": "center"}}>
               <button
                 type="submit"
                 className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
               >
                 Stake Amount
               </button>
+              </div>
             </footer>
           </div>
         </form>

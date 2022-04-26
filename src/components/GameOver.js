@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ethers } from "ethers";
 
 function GameOver() {
+  const [notDonated, notDonate] = useState();
   async function requestAccount() {
     await window.ethereum.request({ method: "eth_requestAccounts" });
   }
@@ -24,6 +25,7 @@ function GameOver() {
       });
       console.log({ ether, addr });
       console.log("tx", tx);
+      notDonate(true);
     } catch (err) {}
   };
 
@@ -41,10 +43,10 @@ function GameOver() {
 
       {/*  <div className="mainGame__Title">Tic Tac Toe</div> */}
 
-        <Link to="/" className="mainGame__goBackButton">Go Back</Link>
 
-
-      <form className="m-4" onSubmit={handleDonate}>
+      <h2>Here are some organizations you can donate to:</h2>
+      <p>Oliver David Foundation: 0x899dFbb92030e010EecE83BB796c785bC1fc9b0c</p>
+      {!notDonated ? <form className="m-4" onSubmit={handleDonate}>
         <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
           <main className="mt-4 p-4">
             <h1 className="text-xl font-semibold text-gray-700 text-center">
@@ -70,7 +72,14 @@ function GameOver() {
             </button>
           </footer>
         </div>
-      </form>
+      </form> : 
+      <div>
+        <div>Thank you for donating! You da best!</div>
+        <Link to="/" className="mainGame__goBackButton">Go Back</Link>        
+      </div>
+      
+      }
+      
     </div>
   );
 }

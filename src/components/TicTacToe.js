@@ -87,6 +87,8 @@ class TicTacToe extends Component {
 
     return (
       <div>
+        <div className="mainGame__Title">Tic - Tac - Toe</div>
+        <div style={{"position":"fixed", "top":"20%", "left": "45%"}}>
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
@@ -102,6 +104,7 @@ class TicTacToe extends Component {
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
+        </div>
         </div>
         <div>{winner && check()}</div>
       </div>
